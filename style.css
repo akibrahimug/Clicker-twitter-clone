@@ -1,0 +1,23 @@
+header{
+    grid-area: header;
+    /* height: 100vh; */
+    /* position: fixed; */
+}
+
+.main-section{
+    grid-area: main;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 10% 25%  25% 40% ;
+    grid-template-areas: 
+    "header main main main"
+    "header main main main"
+    "header main main main";
+}
+
+.header-sizing{
+    width: 25px;
+    padding: 10px;
+}
