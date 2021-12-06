@@ -3,29 +3,27 @@ body{
     padding: 0;
     font-family: 'Roboto', sans-serif;
     display: grid;
-    grid-template-columns: 68px 25%  25% 35% ;
+    grid-template-columns: 25% 25%  25% 25% ;
     grid-template-areas: 
     "main main main main"
     "main main main main"
     "nav nav nav nav";
 }
 
-/* .nav-wrap{
-    grid-area: nav;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position:fixed;
-    top: 2px;
-    height: 100vh;
-    padding: 4px;
-    padding-top: 0;
-} */
+/* Nav section styles */
+
 
 nav{
-    display: flex;
-    justify-content: flex-end;
-}
+    grid-area: nav;
+    display: grid;
+    position:fixed;
+    bottom: 0;
+    background-color: white;
+    grid-template-columns:0.1px  1fr 0.1px repeat(3, 1fr) 0.1px;
+    width: 100%;
+    place-items: center;
+    padding-bottom: 7px;
+} 
 
 .twitter-icon,
 .nav-5,
@@ -33,36 +31,19 @@ nav{
 .nav-7,
 .nav-8,
 .nav-9,
-.nav-user-img{
-    visibility: hidden;
-    position: absolute;
+.nav-user-img,
+.search-replace,
+span h2{
+   display: none;
 }
 
-@media(min-width: 500px){
-    nav{
-        display: grid;
-        row-gap: 7px;
-        place-items: center;
-    }
+svg.nav-icon{
+    width: 24px;
 }
-/* Nav top-icon */
-.nav-wrap{
-    grid-area: nav;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position:fixed;
-    top: 2px;
-    height: 100vh;
-    padding: 4px;
-    padding-top: 0;
-}
-
-
 
 .twitter-icon{
     fill: #1DA1F2;
-    width: 32.5px;
+    width: 28px;
     padding: 10px;
 }
 
@@ -82,9 +63,7 @@ nav{
 .nav-icon{
     width: 26px;
 }
-.nav-8{
-    margin-bottom: 17px;
-}
+
 
 .nav-icon{
     padding: 10px;
@@ -92,7 +71,7 @@ nav{
 
 .nav-9{
     padding: 11px;
-    width: 30px;
+    width: 28px;
 }
 
 
@@ -107,12 +86,11 @@ nav{
     background-color: #0082d3;
 }
 
-div.nav-user-img img{
-    width: 40px;
-    border-radius: 50%;
-    margin-bottom: 15px;
+.nav-user-img img{
     padding: 10px;
-    place-self: end;
+}
+.nav-user-img{
+    height: 30px;
 }
 
 /* main top styles */
@@ -146,7 +124,7 @@ main.main-section{
     grid-template-columns: 70px 1fr;
 }
 .profile-pic img{
-    width: 49px;
+    width: 45px;
     border-radius: 50%;
     margin-left: 15px;
     margin-top: 10px;
@@ -235,7 +213,7 @@ main.main-section{
 
 /* TWEET SECTION */
 .tweet-image img{
-    width: 49px;
+    width: 45px;
     border-radius: 50%;
 }
 /* top of the tweet */
@@ -276,38 +254,141 @@ main.main-section{
     /* margin-top: 5px; */
 }
 
-/* Hidden items */
-.hidden{
-    position: absolute;
-    visibility: collapse;
-   
-}
-
-@media(min-width:623px){
+@media(min-width: 500px){
     body{
-        grid-template-columns: 80px 25%  25% 35% ;
+        grid-template-columns: 13% 25%  25% 37% ;
         grid-template-areas: 
         "nav main main main"
         "nav main main main"
         "nav main main main";
     }
 
+
+/* NAV STYLES */
+    nav{
+        top: 0;
+        background: none;
+        grid-template-columns: 1fr;
+        grid-template-rows:repeat(11, 55px);
+        width: 13%;
+        place-items: center;
+    }
     .nav-wrap{
-        align-items: flex-end;
-        padding: 10px;
-        padding-top: 0;
+        grid-area: nav;
+        display: grid;
+        grid-template-rows: 1fr;
+    }
+    .twitter-icon,
+    .nav-5,
+    .nav-6,
+    .nav-7,
+    .nav-8,
+    .nav-9,
+    .nav-user-img{
+       display: block;
+    }
+    svg.nav-icon{
+        width: 24px;
+    }
+    .nav-user-img img{
+        position: fixed;
+        bottom: 11px;
+        left: 5px;
+        width: 38px;
+        border-radius: 50%;
+    }
+    .nav-9{
+        margin-top: 30px;
+    }
+}
+
+@media(min-width:623px){
+    body{
+        grid-template-columns: 14% 25%  25% 36% ;
+    }
+
+
+/* NAV STYLES */
+    nav{
+        width: 14%;
+    }
+    .nav-user-img img{
+        left: 15px;
     }
 }
 
 @media(min-width:710px){
+    .nav-user-img img{
+        left: 22px;
+    }
+}
+
+@media(min-width:900px){
     body{
-        grid-template-columns: 16% 25%  25% 35% ;
+        grid-template-columns: 18% 25%  25% 31% ;
     }
 
-    .nav-wrap{
-        align-items: flex-end;
-        padding: 10px;
-        padding-top: 0;
-        left:43px
+
+/* NAV STYLES */
+    nav{
+        width: 16%;
+        place-items: end;
+        grid-template-rows:repeat(9, 50px) 80px;
+    }
+
+    .nav-user-img img{
+        left: 105px;
+        bottom: 15px;
+    }
+    
+}
+
+@media(min-width:990px){
+    body{
+        grid-template-columns: 8% 25%  35% 35% ;
+        grid-template-areas: 
+        "nav main main sidebar"
+        "nav main main sidebar"
+        "nav main main sidebar";
+    }
+/* NAV STYLES */
+    nav{
+        width: 8%;
+        place-items:center;
+    }
+
+    .nav-user-img img{
+        left: 10px;
+        bottom: 15px;
+    }
+    /* SHOW HIDDEN NAV ELEMENTS */
+    .search-replace{
+        display: block;
+    }
+    .search-icon{
+        display: none;
+    }
+}
+
+@media(min-width:1265px){
+    body{
+        grid-template-columns: 20% 25%  25% 35% ;
+        grid-template-areas: 
+        "nav main main sidebar"
+        "nav main main sidebar"
+        "nav main main sidebar";
+    }
+
+    /* NAV STYLES */
+    nav{
+        width: 18%;
+        place-items:start;
+        padding-left: 15px;
+        padding-bottom: 0;
+    }
+
+    span h2{
+        display: inline-block;
+        margin: 0;
     }
 }
